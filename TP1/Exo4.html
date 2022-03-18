@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP1 - Exercice 4</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // Add div element 
+    const myDiv = document.createElement('div');
+    // Add background color 
+    myDiv.style.backgroundColor = 'purple';
+    // Add width and height 
+    myDiv.style.width = '100%';
+    myDiv.style.height = '300px';
+
+    // Add h1 element
+    const myH1 = document.createElement('h1');
+    myH1.style.color = 'white';
+    myH1.innerHTML = 'Test';
+    myH1.style.textTransform = 'uppercase';
+
+    // Attach the h1 element to the div 
+    myDiv.appendChild(myH1);
+    
+    // Attach the div element to the body
+    document.getElementsByTagName("body")[0].appendChild(myDiv);
+</script>
+</html>

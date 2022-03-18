@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP2 - Exercice 1</title>
+</head>
+
+<body>
+    <div>
+        <img onclick="rotate(this)" src="https://upload.wikimedia.org/wikipedia/commons/3/3f/NYCS-bull-trans-1.svg" alt="img"/>
+    </div>
+</body>
+
+<script>
+    let val = 0;
+    function rotate(el) {
+        val = val + 90;
+        el.style.transform = "rotate(" +val +"deg)";
+    }
+</script>
+
+</html>

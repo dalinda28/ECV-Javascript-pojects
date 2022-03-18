@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP2 - Exercice 3</title>
+</head>
+
+<body>
+    <img class="firstImage" onclick="growFirstImg(this)" style="cursor: pointer;" src="https://upload.wikimedia.org/wikipedia/commons/3/3f/NYCS-bull-trans-1.svg" alt="img"/>
+    <img class="secondImage" onclick="growSecondImg(this)" style="cursor: pointer;" src="https://upload.wikimedia.org/wikipedia/commons/6/61/NYCS-bull-trans-2.svg" alt="img"/>
+</body>
+
+<script>
+    function growFirstImg(el) {
+        let firstImage = document.getElementsByClassName("firstImage")[0];
+        let secondImage = document.getElementsByClassName("secondImage")[0];
+        
+        let widthfirstImage = firstImage.clientWidth;
+        let widthsecondImage = secondImage.clientWidth;
+
+        firstImage.style.width = (widthfirstImage + 20) + "px";
+        secondImage.style.width = (widthsecondImage - 20) + "px";
+    }
+
+    function growSecondImg(el) {
+        let firstImage = document.getElementsByClassName("firstImage")[0];
+        let secondImage = document.getElementsByClassName("secondImage")[0];
+        
+        let widthfirstImage = firstImage.clientWidth;
+        let widthsecondImage = secondImage.clientWidth;
+
+        firstImage.style.width = (widthfirstImage - 20) + "px";
+        secondImage.style.width = (widthsecondImage + 20) + "px";
+    }
+</script>
+
+</html>

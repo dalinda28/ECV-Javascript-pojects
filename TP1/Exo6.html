@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP1 - Exercice 6</title>
+</head>
+
+<body>
+    <ul id="list">
+        <li>Toto</li>
+        <li>Tata</li>
+        <li>Titi</li>
+        <li>Tutu</li>
+    </ul>
+</body>
+
+<script>
+    
+    let ul = document.getElementById("list");
+    // Add "li" new element
+    let li = document.createElement("li");
+    li.innerHTML = "TYTY";
+
+    let secondLi = document.getElementsByTagName("li")[1];
+    ul.appendChild(li);
+    // replace second "li" by the new "li"
+    ul.replaceChild(li, secondLi);
+
+</script>
+
+</html>

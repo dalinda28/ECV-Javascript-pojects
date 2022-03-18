@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP1 - Exercice 3</title>
+</head>
+<body>
+    <div class="images">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/NYCS-bull-trans-1.svg" alt="1"/>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/NYCS-bull-trans-2.svg" alt="1"/>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/25/NYCS-bull-trans-3.svg" alt="1"/>
+    </div>  
+</body>
+<script>
+    let firstImg = document.getElementsByTagName("img")[0];
+    let secondImg = document.getElementsByTagName("img")[1];
+    let thirdImg = document.getElementsByTagName("img")[2];
+
+    firstImg.src = thirdImg.src;
+    secondImg.src = thirdImg.src;
+</script>
+</html>
