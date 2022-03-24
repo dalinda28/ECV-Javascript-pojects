@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP4 - Exercice 1</title>
+</head>
+
+<body>
+</body>
+
+<script>
+    let s = "lorem, ipsum dolor sit amet consectetur adipisicing elit.";
+    //Question 1 : inverser une chaîne
+    function reverse(str){
+        return str.split(" ").reverse().join(" ");
+    }
+    //alert(reverse(s));
+
+    //Question 2 : transformer la première lettre d’une chaine de caractère en majuscule
+    function ucFirst(word){
+        return word.slice(0,1).toUpperCase() + word.slice(1);
+    }
+    //alert(ucFirst(s));
+
+    //Question 3 : transformer chaque première lettre de chaque mot en majuscule
+    function capitalize(str){
+        let spliteSent = str.split(" ");
+        for (let i = 0; i < spliteSent.length; i++) {
+            spliteSent[i] = spliteSent[i][0].toUpperCase() + spliteSent[i].substr(1);
+        }
+        return spliteSent.join(" ")
+    }
+    //alert(capitalize(s));
+
+    //Question 4 : transformer chaque première lettre de chaque mot en majuscule et supprimer les espaces
+    function pascalCase(str){
+        let spliteSent = str.split(" ");
+        for (let i = 0; i < spliteSent.length; i++) {
+            spliteSent[i] = spliteSent[i][0].toUpperCase() + spliteSent[i].substr(1);
+        }
+        return spliteSent.join("")
+    }
+    //alert(pascalCase(s));
+
+    //Question 5 : Vérifie si un mot est un palindrome et retourne un booléen
+    function palindrome(str){
+        return str == str.split('').reverse().join('');
+    }
+    //alert(palindrome("kayak"));
+
+    //Question 6 : Trouver le mot le long plus d’une chaîne de caractère
+    function findLongestWord(str){
+        let str = str.split(" ");
+        let longest = 0;
+        let word = null;
+        for (let i = 0; i < str.length; i++){
+            if (longest < str[i].length) {
+                longest = str[i].length;
+                word = str[i];
+            }
+    }
+    return word;
+    }
+    //alert(findLongestWord(s));
+</script>
+</html>

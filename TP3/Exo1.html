@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP3 - Exercice 1</title>
+</head>
+<style>
+    #carre1{
+        background-color: black; 
+        width: 50px; 
+        height: 50px; 
+        position: absolute; 
+        top: 50px; 
+        left: 100px;
+    }
+    #carre2{
+        background-color: black; 
+        width: 50px; 
+        height: 50px; 
+        position: absolute; 
+        top:50px; 
+        left: 200px;
+    }
+    #carre3{
+        background-color: black; 
+        width: 50px; 
+        height: 50px; 
+        position: absolute; 
+        top:50px; 
+        left: 300px;
+    }
+</style>
+<body>
+    <div onclick="changeColor(this)" id="carre1"></div>
+    <div onclick="changeColor(this)" id="carre2"></div>
+    <div onclick="changeColor(this)" id="carre3"></div>
+</body>
+
+<script>
+    //👇 Change the color of the clicked sqaure 
+    function changeColor(el){
+        if (el.style.backgroundColor != 'red'){
+            el.style.backgroundColor = 'red';
+        }else{
+            el.style.backgroundColor = 'black';
+        }
+    }
+    
+</script>
+</html>

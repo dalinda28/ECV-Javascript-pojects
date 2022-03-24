@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP3 - Exercice 4</title>
+</head>
+
+<body>
+    <ul></ul>
+</body>
+
+<script>
+    
+    const ul = document.getElementsByTagName("ul")[0];
+    document.addEventListener('keydown', (event) => {
+        // Add "ul" new element
+        let li = document.createElement("li");
+
+        const touch = event.key;
+        li.innerHTML = touch;
+
+        ul.appendChild(li);
+        if (document.getElementsByTagName("li").length >= 20) {
+            ul.removeChild(ul.firstChild);
+        }
+
+        document.querySelector("ul").appendChild(li);
+        
+    });
+    
+</script>
+</html>
