@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP5 - Exerice 1</title>
+</head>
+<body>
+    
+</body>
+<script>
+//Question 1: This function will return the 3 longest words in the string, sorted by length.
+const getHashTags = (str) => str
+                            .split(" ")
+                            .sort((a, b) => b.length - a.length)
+                            .splice(0, 3)
+                            .map((string) => `#${string.toLowerCase()}`)
+
+console.log(getHashTags("récupère les trois mots les plus longs"))
+
+//Question 2: Creating a new array with the elements of the first array without duplicates.
+const removeDuplicates = (tab) => [...new Set(tab)]
+
+console.log(removeDuplicates([6, 3, 3, 8, 8, 7]));
+
+//Question 3: Creating a function that will return the intersection of two arrays.
+const intersection = (arr, arr2) => [...new Set(arr)].filter(x => new Set(arr2).has(x));
+
+console.log(intersection([6, 3, 3, 8, 8, 7], [6, 4, 3, 6, 1, 7]));
+
+//Question 4: Creating a function that will remove the duplicates from the first array and return the result.
+const arrayDiff = (first, second) => removeDuplicates(first.filter(x => !second.includes(x)));
+
+console.log(arrayDiff([6, 3, 3, 8, 8, 7], [6, 4, 3, 6, 1, 7]));
+
+//Question 5: Creating a function that will multiply all the values in the array.
+const combinaisons = (...value) => value.reduce((first, second) => first * second);
+
+console.log(combinaisons(6, 3, 5, 3));
+
+
+</script>
+</html>
