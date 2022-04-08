@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP6</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let consonnes = ['A', 'E', 'I', 'O', 'U']
+
+    const tabMonth = {
+        1: "A", 2: "B", 3: "C", 4: "D", 5: "E", 6: "H",
+        7: "L", 8: "M", 9: "P", 10: "R", 11: "S", 12: "T"
+    }
+    const matt = {
+        name: "Matt",
+        surname: "Edabit",
+        gender: "M",
+        dob: "1/1/1900"
+    };
+
+    const helen = {
+        name: "Helen",
+        surname: "Yu",
+        gender: "F",
+        dob: "1/12/1950"
+    }
+
+    const mickey = {
+        name: "Mickey",
+        surname: "Mouse",
+        gender: "M",
+        dob: "16/1/1928"
+    }
+
+
+    function getVowelsAndConsonants(string) {
+        const vowels = ['a', 'e', 'i', 'o', 'u'];
+        return string.split('').reduce((word, current) => {
+            if (vowels.indexOf(current.toLowerCase()) === -1)
+                word.consonants += current;
+            else
+                word.vowels += current;
+
+            return word;
+
+        }, { vowels: '', consonants: '' })
+    }
+
+    function formatedSurname(surname) {
+        const seperatedString = getVowelsAndConsonants(surname);
+        const surnameCode = seperatedString.consonants.substr(0, 3) + seperatedString.vowels.substr(0, 3);
+
+        return surnameCode.length === 3 ? surnameCode : (surnameCode.substr(0, 3).padEnd(3, 'X'));
+    }
+
+    function formatedName(name) {
+        const seperatedString = getVowelsAndConsonants(name);
+        if (seperatedString.consonants.length === 3)
+            return seperatedString.consonants;
+        if (seperatedString.consonants.length > 3)
+            return seperatedString.consonants.charAt(0) + seperatedString.consonants.substr(2, 2);
+
+        const nameCode = seperatedString.consonants.substr(0, 3) + seperatedString.vowels.substr(0, 3);
+
+        return nameCode.length === 3 ? nameCode : (nameCode.substr(0, 3).padEnd(3, 'X'));
+    }
+
+    const formatedBirthdayGender = (gender, dob) => {
+        let formatedBirth = '';
+        formatedBirth += dob.substr(-2, 2);
+
+        const birthdayMonth = dob.split('/')[1];
+        formatedBirth += tabMonth[birthdayMonth];
+
+        const birthdayday = dob.split('/')[0];
+
+        if (gender !== 'M') {
+            formatedBirth += parseInt(birthdayday) + 40;
+        } else {
+            formatedBirth += birthdayday < 10 ? '0' + birthdayday : birthdayday;
+        }
+        return formatedBirth;
+
+    }
+
+    function fiscalCode(obj) {
+        let fiscalCode = ' '
+        fiscalCode += formatedSurname(obj.surname).toUpperCase();;
+        fiscalCode += formatedName(obj.name).toUpperCase();;
+        fiscalCode += formatedBirthdayGender(obj.gender, obj.dob);
+        console.log(fiscalCode);
+    }
+
+    fiscalCode(matt);
+    fiscalCode(helen);
+    fiscalCode(mickey);
+
+</script>
+
+</html>
