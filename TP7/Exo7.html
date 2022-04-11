@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP7</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //Exo 1:
+    const ifTwelve = (string) => {
+        return new Promise((res, fai) => {
+            string.length < 20 ? res(true) : fai(false);
+        })
+    }
+
+    //Exo 2: 
+    const ifDiff = (int1, int2) => {
+        return new Promise((res, fai) => {
+            int1 > int2 ? res(int2 - int1) : fai("Echec")
+        })
+    }
+
+
+    //Exo 3: 
+    const ifMinor = (dateOfBirth) => {
+        return new Promise((res, fai) => {
+            const formatedDate = new Date(dateOfBirth.split('/').reverse().join('-'));
+            const now = new Date()
+            let age = now.getFullYear() - formatedDate.getFullYear()
+            age >= 18 ? res(true) : fai("Echec")
+        })
+    }
+
+    //Exo 4:
+    ifTwelve("correecccccccttttttttt")
+        .then(res => console.log(res))
+        .catch(res => console.error(res))
+
+    ifDiff(20, 11)
+        .then(res => console.log(res))
+        .catch(res => console.error(res))
+
+    ifMinor("28/01/2007")
+        .then(res => console.log(res))
+        .catch(res => console.error(res))
+
+
+    //Exo 5:
+    const withAwaitAsync = async () => {
+        try {
+          const exo1 = await ifTwelve("correecccccccttttttttt")
+          const exo2 = await ifDiff(20, 11)
+          const exo3 = await ifMinor("28/01/2007")
+          console.log({
+            exo1,
+            exo2,
+            exo3
+          })
+        } catch (error) {
+          console.error(error)
+        }
+      }
+      withAwaitAsync()
+
+</script>
+
+</html>
