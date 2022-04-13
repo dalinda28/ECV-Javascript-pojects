@@ -54,19 +54,65 @@
     //Exo 5:
     const withAwaitAsync = async () => {
         try {
-          const exo1 = await ifTwelve("correecccccccttttttttt")
-          const exo2 = await ifDiff(20, 11)
-          const exo3 = await ifMinor("28/01/2007")
-          console.log({
-            exo1,
-            exo2,
-            exo3
-          })
+            const exo1 = await ifTwelve("correecccccccttttttttt")
+            const exo2 = await ifDiff(20, 11)
+            const exo3 = await ifMinor("28/01/2007")
+            console.log({
+                exo1,
+                exo2,
+                exo3
+            })
         } catch (error) {
-          console.error(error)
+            console.error(error)
         }
-      }
-      withAwaitAsync()
+    }
+    withAwaitAsync()
+
+    //Exo 6:
+    async function fetchCaratere() {
+        const rep = await fetch('https://swapi.dev/api/people/', { method: 'GET' });
+        const reponse = await rep.json();
+        return reponse;
+    }
+    async function fetchPlanete() {
+        const rep = await fetch('https://swapi.dev/api/planets/', { method: 'GET' });
+        const reponse = await rep.json();
+        return reponse;
+    }
+    async function fetchVaisseau() {
+        const rep = await fetch('https://swapi.dev/api/starships/', { method: 'GET' });
+        const reponse = await rep.json();
+        return reponse;
+    }
+
+    const List = ({results}) => {
+        const ul = document.createElement('ul');
+        const li = document.createElement('li');
+        results.forEach(result => {
+            const { name } = result;
+            li.innerText = name;
+            ul.appendChild(li);
+        })
+        document.body.appendChild(ul);
+        document.body.appendChild(li);
+    }
+
+    async function fetchList() {
+        try {
+            const fetchC = await fetchCaratere();
+            const fetchP = await fetchPlanete();
+            const fetchV = await fetchVaisseau();
+
+            List(fetchC);
+            List(fetchP);
+            List(fetchV);
+
+        } catch (error) {
+            console.error(error);
+        }
+    }
+    fetchList();
+
 
 </script>
 
